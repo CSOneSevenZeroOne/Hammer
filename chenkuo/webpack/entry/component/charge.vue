@@ -1,0 +1,122 @@
+<template>
+    <div id="charge">
+        <div class="phone">
+            <p id="p1" v-text="type">充电线材</p>
+        </div>
+
+        <a href="#/product" @click="gettype">
+            <div class="phone" id="img1">
+                <img src="../../hammer-img/29.png" alt="" style="width:100%">
+            </div>
+        </a>
+
+        <div id="myul" class="phone">
+            <ul id="oul">
+                <li>
+                    <div class="img2">
+                        <img src="../../hammer-img/33.jpg" alt="" width="69px" height="69px">
+                    </div>
+                    <p>原装充电线</p>
+                </li>
+                <li>
+                    <div class="img2">
+                        <img src="../../hammer-img/8.jpg" alt="" width="69px" height="69px">
+                    </div>
+                    <p>原装充电线</p>
+                </li>
+                <li>
+                    <div class="img2">
+                        <img src="../../hammer-img/31.jpg" alt="" width="69px" height="69px">
+                    </div>
+                    <p>原装充电线</p>
+                </li>
+                <li>
+                    <div class="img2">
+                        <img src="../../hammer-img/38.jpg" alt="" width="69px" height="69px">
+                    </div>
+                    <p>原装充电线</p>
+                </li>
+                <li>
+                    <div class="img2">
+                        <img src="../../hammer-img/39.jpg" alt="" width="69px" height="69px">
+                    </div>
+                    <p>原装充电线</p>
+                </li>
+                <li>
+                    <div class="img2">
+                        <img src="../../hammer-img/33.jpg" alt="" width="69px" height="69px">
+                    </div>
+                    <p>原装充电线</p>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div id="bord"></div>
+    </div>
+
+
+</template>
+
+
+<script>
+
+    export default {
+        data(){
+            return {
+                type : "充电线材",
+            }
+        },
+        methods : {
+            gettype(){
+                this.$store.state.type = this.type
+                //                console.log(this.$store.state.type);
+            },
+        }
+    }
+
+</script>
+
+
+<style scoped>
+
+    .phone{
+        padding:0 0.12rem;
+        border-bottom:1px solid #f1f1f1;
+    }
+    #p1{
+        font-size:0.16rem;
+        line-height:0.4rem;
+        color:#666666;
+    }
+    #img1{
+        padding:0.13rem 0.12rem;
+    }
+    #myul{
+        overflow:hidden;
+        margin-bottom:0.2rem;
+        border-bottom:0;
+    }
+    #oul .img2{
+        padding:0.2rem;
+        border:1px solid #f5f5f5;
+    }
+    #oul li{
+        text-align:center;
+        width:1.1rem;
+        float:left;
+        margin-right:0.08rem;
+        margin-top:0.2rem;
+    }
+    #oul li:nth-of-type(3n){
+        margin-right:0;
+    }
+    #oul li > p{
+        margin-top:0.08rem;
+    }
+    #bord{
+        height:0.08rem;
+        background:linear-gradient(#e2e2e2, #e7e7e7);
+    }
+</style>
