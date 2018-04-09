@@ -21,15 +21,20 @@ import VueRouter from 'vue-router'
 Vue.use(VueRouter)
 import classify from "./component/classify.vue"
 import product from "./component/product.vue"
+import detail from "./component/detail.vue"
 
 const router = new VueRouter({
     routes : [{
         path : '/',
         component : classify
-        },
+    },
         {
             path : '/product',
             component : product
+        },
+        {
+            path : '/detail',
+            component : detail
         }
 
     ]
@@ -43,40 +48,35 @@ const store = new Vuex.Store({
     //消息
     state : {
         bool : false,
-        type : ""
-    },
-    //获取值得方法
-    getters : {
-        getSrc(state){
-            //处理数据
-            return state.type
-        }
+        type : "",
+        name : ""
     }
-})
+    //获取值得方法
 
+})
 
 
 import xclassify from "./component/classify.vue"
 import xproduct from "./component/product.vue"
+import xdetail from "./component/detail.vue"
 
 new Vue({
     el : "#demo",
-       template:`
+    template : `
        <div style="width:100%;height:100%">
        <router-view></router-view>
        </div>
        `,
     //容器数据
-    data: {
-
-    },
+    data : {},
     store,
     router,
     //容器的逻辑
-    methods: {},
+    methods : {},
     //注册组件
     components : {
         xclassify,
-        xproduct
+        xproduct,
+        xdetail
     }
 })

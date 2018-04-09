@@ -13,6 +13,8 @@ var app = express();
 
 //产品
 app.use('/product',require('./product.js'))
+//详情
+app.use('/detail',require('./detail.js'))
 
 
 app.listen(8888);

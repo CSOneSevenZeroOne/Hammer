@@ -14,46 +14,45 @@
         </div>
 
         <div class="all">
-            <div v-for="a in arr" class="datanum">
-                <img :src="a.imgsrc" alt="" style="width:1.26rem;height:1.26rem" class="img0">
 
-                <div class="item">
-                    <h5 v-text="a.name"></h5>
-                    <p v-text="a.describe" class="p-describe"></p>
-                    <ul class="oul" v-if="bool">
-                        <li class="box-border"><span>4G + 32GB</span></li>
-                        <li class="box-border"><span>4G + 64GB</span></li>
-                        <li class="box-border"><span>6G + 64GB</span></li>
-                        <li class="box-border"><span>6G + 128GB</span></li>
-                        <li class="box-border"><span>6G + 256GB</span></li>
-                    </ul>
+            <a href="#/detail">
+                <div v-for="a in arr" class="datanum" @click="getname">
+                    <img :src="a.imgsrc" alt="" style="width:1.26rem;height:1.26rem" class="img0">
+
+                    <div class="item">
+                        <h5 v-text="a.name" class="name-z"></h5>
+                        <p v-text="a.describe" class="p-describe"></p>
+                        <ul class="oul" v-if="bool">
+                            <li class="box-border"><span>4G + 32GB</span></li>
+                            <li class="box-border"><span>4G + 64GB</span></li>
+                            <li class="box-border"><span>6G + 64GB</span></li>
+                            <li class="box-border"><span>6G + 128GB</span></li>
+                            <li class="box-border"><span>6G + 256GB</span></li>
+                        </ul>
+                        <ul class="print">
+                            <li v-if="bool">
+                                <div class="outer"></div>
+                            </li>
+                            <li v-if="bool">
+                                <div class="outer"></div>
+                            </li>
+                            <li>
+                                <div class="outer kong"></div>
+                            </li>
+                            <li>
+                                <div class="outer"></div>
+                            </li>
+                        </ul>
 
 
-                    <ul class="print">
-                        <li v-if="bool">
-                            <div class="outer"></div>
-                        </li>
-                        <li v-if="bool">
-                            <div class="outer"></div>
-                        </li>
-                        <li>
-                            <div class="outer kong"></div>
-                        </li>
-                        <li>
-                            <div class="outer"></div>
-                        </li>
-                    </ul>
-
-
-                    <p class="price">
-                        <span v-text="a.newprice" class="newprice"></span><span class="origin-price" v-text="a.oldprice"></span>
-                    </p>
-
+                        <p class="price">
+                            <span v-text="a.newprice" class="newprice"></span><span class="origin-price" v-text="a.oldprice"></span>
+                        </p>
+                    </div>
                 </div>
-            </div>
-
+            </a>
         </div>
-
+        <xfooter/>
     </div>
 
 </template>
@@ -62,34 +61,47 @@
 <script>
 
     import $ from "jquery"
+    import xfooter from "./classify/footer.vue";
 
     export default {
         data : function(){
             return {
-                arr : ""
+                arr : "",
+                type : '',
             }
         },
         computed : {
-            type(){
-                return this.$store.state.type
-            },
             bool(){
                 if(this.type == "手机"){
                     return true
                 } else {
                     return false
                 }
-            },
-            /*arr(){
-                return JSON.parse(sessionStorage.getItem('arr'))
-            }*/
+            }
+        },
+        methods : {
+            getname(event){
+                //**必须先通过点击target找到最大父级再找目标对象
+                var bflg = false
+                for(var i = 0; i < $(".datanum").length; i++){
+                    if($(".datanum")[i] == event.target){
+                        bflg = true
+                    }
+                }
+                if(bflg){
+                    this.$store.state.name = $(event.target).find(".name-z").text().trim()
+                } else {
+                    this.$store.state.name = $(event.target).parents(".datanum").find(".name-z").text().trim()
+                }
+                  console.log(this.$store.state.name);
+            }
         },
         created : function(){
             var url = "http://localhost:8888/product";
             var self = this;
             var type = this.$store.state.type
             $.post(url, function(res){
-                //                console.log(res);
+                // console.log(res);
                 var temparr = JSON.parse(res)
                 var arr2 = []
                 for(var i = 0; i < temparr.length; i++){
@@ -97,18 +109,25 @@
                         arr2.push(temparr[i])
                     }
                 }
-                console.log(arr2);
-                var str = JSON.stringify(arr2)
-                self.arr = arr2
-                /* var str2=sessionStorage.getItem('arr')
-                 if(str!=str2){
-                     window.sessionStorage.setItem('arr', "");
-                     window.sessionStorage.setItem('arr', str);
-                 }else {
-                     window.sessionStorage.setItem('arr', str);
-                 }*/
-
+                //console.log(arr2);
+                //逻辑  有点复杂
+                if(arr2.length != 0){
+                    self.arr = arr2
+                    var str = JSON.stringify(arr2)
+                    window.sessionStorage.setItem('arr', str);
+                    self.type = self.$store.state.type
+                } else {
+                    self.arr = JSON.parse(sessionStorage.getItem('arr'))
+                    self.type = self.arr[0].type
+                }
+                console.log(self.type);
             })
+        },
+        mounted : function(){
+
+        },
+        components : {
+            xfooter
         }
     }
 
@@ -160,6 +179,10 @@
         color:#fff;
         text-align:center;
         line-height:0.46rem;
+    }
+    .all{
+        padding-bottom:0.53rem;
+        padding-top:0.5rem;
     }
     .all > div:nth-last-child(1){
         border-bottom:0;

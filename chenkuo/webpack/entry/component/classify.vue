@@ -22,18 +22,18 @@
 
 
 <script>
-    import xheader from "./header.vue";
-    import xmobilephone from "./mobilephone.vue";
-    import xairclear from "./airclear.vue";
-    import xshell from "./shell.vue";
-    import xcharge from "./charge.vue";
-    import xheadset from "./headset.vue";
-    import xclothing from "./clothing.vue";
-    import xbrand from "./brand.vue";
-    import xbooks from "./books.vue";
-    import xstationery from "./stationery.vue";
-    import xprojector from "./projector.vue";
-    import xfooter from "./footer.vue";
+    import xheader from "./classify/header.vue";
+    import xmobilephone from "./classify/mobilephone.vue";
+    import xairclear from "./classify/airclear.vue";
+    import xshell from "./classify/shell.vue";
+    import xcharge from "./classify/charge.vue";
+    import xheadset from "./classify/headset.vue";
+    import xclothing from "./classify/clothing.vue";
+    import xbrand from "./classify/brand.vue";
+    import xbooks from "./classify/books.vue";
+    import xstationery from "./classify/stationery.vue";
+    import xprojector from "./classify/projector.vue";
+    import xfooter from "./classify/footer.vue";
 
 
     export default {

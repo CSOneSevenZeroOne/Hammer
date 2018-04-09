@@ -9,8 +9,7 @@ module.exports = {
     //出口
     output : {
         path : path.resolve(__dirname, 'output'),
-        filename : 'bundle.js',
-        publicPath : "dist/"
+        filename : 'bundle.js'
     },
     //开发版本
     mode : "development",
