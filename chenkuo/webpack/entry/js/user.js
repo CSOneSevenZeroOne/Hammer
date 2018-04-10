@@ -23,6 +23,8 @@ app.use('/register',require('./register.js'))
 app.use('/login',require('./login.js'))
 //个人中心
 app.use('/person',require('./person.js'))
+//账户详情
+app.use('/zhxq',require('./zhxq.js'))
 
 app.listen(8888);
 console.log("开启服务器");

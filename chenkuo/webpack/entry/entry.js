@@ -25,6 +25,7 @@ import detail from "./component/detail.vue"
 import register from "./component/register.vue"
 import login from "./component/login.vue"
 import person from "./component/person.vue"
+import zhxq from "./component/zhxq.vue"
 
 const router = new VueRouter({
     routes : [{
@@ -50,6 +51,10 @@ const router = new VueRouter({
         {
             path : '/person',
             component : person
+        },
+        {
+            path : '/zhxq',
+            component : zhxq
         }
     ]
     // （缩写）相当于 routes: routes
@@ -76,6 +81,7 @@ import xdetail from "./component/detail.vue"
 import xregister from "./component/register.vue"
 import xlogin from "./component/login.vue"
 import xperson from "./component/person.vue"
+import xzhxq from "./component/zhxq.vue"
 
 new Vue({
     el : "#demo",
@@ -97,6 +103,7 @@ new Vue({
         xdetail,
         xregister,
         xlogin,
-        xperson
+        xperson,
+        xzhxq
     }
 })

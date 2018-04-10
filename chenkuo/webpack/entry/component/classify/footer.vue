@@ -32,7 +32,7 @@
           getreplace(){
              var str=window.sessionStorage.getItem("login")
               console.log(str);
-              if(str!=null){
+              if(str!=null && str!=""){
                   this.$router.replace({path : "person"})
               }else {
                   this.$router.replace({path : "login"})

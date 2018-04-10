@@ -8,7 +8,7 @@
        </header>
        <section style="margin-top: .5rem;margin-bottom: .54rem;">
            <div class="wrapper">
-               <a href="#">
+               <a href="#/zhxq">
                    <div class="personData" v-for="a in res" >
                        <div class="photo">
                            <img src="../hammer-img/loginImage/photo.png" alt="">
@@ -19,33 +19,33 @@
                </a>
                <ul class="menuList">
                    <li>
-                       <a class="icons allgoods" href="#" target="_self">全部订单</a>
+                       <a class="icons allgoods"  target="_self">全部订单</a>
                    </li>
                    <li>
-                       <a class="icons pay" href="#" target="_self">待付款</a>
+                       <a class="icons pay"  target="_self">待付款</a>
                    </li>
                    <li>
-                       <a class="icons getgoods" href="#" target="_self">待收货</a>
+                       <a class="icons getgoods"  target="_self">待收货</a>
                    </li>
                    <li>
-                       <a class="icons server" href="#" target="_self">售后</a>
+                       <a class="icons server"  target="_self">售后</a>
                    </li>
                </ul>
                <ul class="aboutServer">
                    <li class="serverList">
-                       <a href="#" target="_self">
+                       <a  target="_self">
                            发起售后
                        </a>
                    </li>
                    <li>
-                       <a href="#" target="_self">
+                       <a  target="_self">
                            我的售后
                        </a>
                    </li>
                </ul>
                <ul class="otherServer aboutServer">
                    <li class="serverList">
-                       <a href="#" target="_self">
+                       <a  target="_self">
                            地址管理
                        </a>
                    </li>
@@ -67,21 +67,22 @@
                </ul>
                <ul class="storeSearch aboutServer">
                    <li class="serverList">
-                       <a href="#">
+                       <a >
                            线下零售门店查询
                        </a>
                    </li>
                    <li class="serverList">
-                       <a href="#">
+                       <a >
                            线下维修门店查询
                        </a>
                    </li>
                    <li>
-                       <a href="#">
+                       <a >
                            常见问题
                        </a>
                    </li>
                </ul>
+
            </div>
        </section>
    </div>
@@ -94,6 +95,9 @@
             return{
                   res:[]
             }
+        },
+        methods:{
+
         },
         mounted:function () {
             var self=this;
