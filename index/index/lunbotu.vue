@@ -15,6 +15,11 @@
 </template>
 
 <script>
+	export default {
+		mounted() {
+			require("./fzh")()
+		}
+	}
 </script>
 
 <style scoped>

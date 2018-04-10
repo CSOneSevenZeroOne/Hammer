@@ -1,8 +1,23 @@
 <template>
-    <div _ngcontent-c1="" class="title-bar"> <!----><a _ngcontent-c1="" class="nav-toggle" title="菜单"></a> <!----> <!----><h1 _ngcontent-c1="" class="nav-logo"> <a _ngcontent-c1="" href="/">锤子科技商城</a> </h1> <!----> <!----> <!----> </div>
+    <div>
+    <div _ngcontent-c1="" class="title-bar"> <!----><a _ngcontent-c1="" class="nav-toggle" title="菜单"></a> <!----> <!----><h1 _ngcontent-c1="" class="nav-logo"> <a _ngcontent-c1="" href="#/">锤子科技商城</a> </h1> <!----> <!----> <!----> </div>
+    <xlunbo />
+    <xnav />
+    <xcontent />
+    </div>
 </template>
 
 <script>
+	import xlunbo from "./lunbotu.vue"
+	import xnav from "./nav.vue"
+	import xcontent from "./content.vue"
+	export default {
+		components:{
+			xlunbo,
+			xnav,
+			xcontent
+		}
+	}
 </script>
 
 <style scoped>

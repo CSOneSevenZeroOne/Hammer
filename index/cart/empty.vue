@@ -1,15 +1,15 @@
 <template>
     <div>
-        <div _ngcontent-c1="" class="title-bar"> <!----> <!----> <!----> <!----><h1 _ngcontent-c1="" class="nav-title"> 购物车 </h1> <!----> <!----><a _ngcontent-c1="" class="nav-edit">完成</a> </div>
+    <xheader />
     <div _ngcontent-c19="" class="empty-container"> <div _ngcontent-c19=""> <div _ngcontent-c19="" class="img-container"></div> <h3 _ngcontent-c19="">购物车暂无商品</h3> <p _ngcontent-c19="">添加到购物车的商品将会显示在这里</p> <!----><a _ngcontent-c19="" class="buy-btn login">登录</a> <a _ngcontent-c19="" class="buy-btn box-border" target="_self" href="/index">现在选购</a> </div> </div>
-     </div>
+    </div>
 </template>
 
 <script>
-	import $ from "jquery"
+	import xheader from "./header.vue"
 	export default {
-		mounted() {
-			require("./text")
+		components:{
+			xheader
 		}
 	}
 </script>
@@ -68,48 +68,5 @@
         background: linear-gradient(rgba(0,0,0,.01),hsla(0,0%,100%,.01));
         box-shadow: inset 0 2px 4px hsla(0,0%,100%,.3);
         border: 1px solid #f0f0f0
-    }
-    .title-bar[_ngcontent-c1] {
-        background: #1d1d1d;
-        background-image: linear-gradient(#1d1d1d,#181818);
-        height: 50px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 199;
-        overflow: hidden;
-    }
-    .title-bar[_ngcontent-c1] .nav-title[_ngcontent-c1] {
-        color: #fff;
-        font-size: 18px;
-        line-height: 20px;
-        padding: 16px 0 0;
-        text-align: center;
-        position: absolute;
-        top: 0;
-        left: 60px;
-        right: 60px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-    }
-    .title-bar[_ngcontent-c1] .nav-edit[_ngcontent-c1] {
-        padding: 10px 13px 0;
-        right: 6px;
-    }
-   .title-bar[_ngcontent-c1] .nav-edit[_ngcontent-c1] {
-        background: #070707;
-        background: linear-gradient(#131313,#070707);
-        color: #fff;
-        border-radius: 4px;
-        box-sizing: border-box;
-        font-size: 12px;
-        height: 32px;
-        line-height: 1;
-        position: absolute;
-        top: 50%;
-        -webkit-transform: translateY(-50%);
-        transform: translateY(-50%);
     }
 </style>
