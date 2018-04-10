@@ -6,7 +6,7 @@
 
         <a href="#/product" @click="gettype">
             <div class="phone" id="img1">
-                <img src="../../../hammer-img/18.png" alt="" style="width:100%">
+                <img src="../../hammer-img/18.png" alt="" style="width:100%">
             </div>
         </a>
 
@@ -97,7 +97,7 @@
         height:0.32rem;
     }
     #oul li > p{
-        background:url("../../../hammer-img/53.jpg") no-repeat left top;
+        background:url(../../hammer-img/53.jpg) no-repeat left top;
         background-size:contain;
     }
     #oul li span{

@@ -6,7 +6,7 @@
         </div>
         <a href="#/product" @click="gettype">
             <div class="phone" id="img1">
-                <img src="../../../hammer-img/17.png" alt="" style="width:100%">
+                <img src="../../hammer-img/17.png" alt="" style="width:100%">
             </div>
         </a>
         <a href="#/detail" @click="getname">
@@ -89,7 +89,7 @@
         color:#666666;
     }
     .p2{
-        background:url("../../../hammer-img/32.png") no-repeat left top;
+        background:url("../../hammer-img/32.png") no-repeat left top;
         background-size:contain;
         line-height:0.32rem;
         width:100%;

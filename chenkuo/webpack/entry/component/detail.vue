@@ -2,7 +2,7 @@
     <div>
         <header>
             <div class="title-bar">
-                <a  class="nav-back"  @click="routerBack">返回</a>
+                <a class="nav-back" @click="routerBack">返回</a>
                 <h1 class="nav-title" v-text="obj.name"></h1>
             </div>
         </header>
@@ -40,8 +40,7 @@
                         <p v-text="obj.describe">骁龙 ™ 660 处理器 · 1200 万 + 500 万像素双摄像头 · 3500mAh 大电池 · 18W 快速充电 · 人脸解锁 + 指纹解锁</p>
                         <div class="wrap">
                             <div class="newPrice">
-                                 <span v-text="obj.newprice">1,799.00</span>
-                                 <i v-text="obj.oldprice">1,799.00</i>
+                                <span v-text="obj.newprice">1,799.00</span> <i v-text="obj.oldprice">1,799.00</i>
                             </div>
                             <div class="fenQi" v-if="bool">
                                 分期付款低至每月 <i>￥</i> <span>161.16</span>
@@ -151,7 +150,7 @@
                         <div class="sameList">
                             <div class="product">
                                 <a class="item-img">
-                                    <img src="../../hammer-img/image/1.jpg" alt style="opacity:1;transition: opacity 0.3s ease-in-out;">
+                                    <img src="../hammer-img/image/1.jpg" alt style="opacity:1;transition: opacity 0.3s ease-in-out;">
                                 </a>
                                 <div class="item-content">
                                     <h4>坚果 Pro 2 文青保护笔</h4>
@@ -165,7 +164,7 @@
                         <div class="sameList leftMargin">
                             <div class="product">
                                 <a class="item-img">
-                                    <img src="../../hammer-img/image/2.png" alt style="opacity:1;transition: opacity 0.3s ease-in-out;">
+                                    <img src="../hammer-img/image/2.png" alt style="opacity:1;transition: opacity 0.3s ease-in-out;">
                                 </a>
                                 <div class="item-content">
                                     <h4>坚果 Pro 2 软胶保护套</h4>
@@ -179,7 +178,7 @@
                         <div class="sameList">
                             <div class="product">
                                 <a class="item-img">
-                                    <img src="../../hammer-img/image/2.png" alt style="opacity:1;transition: opacity 0.3s ease-in-out;">
+                                    <img src="../hammer-img/image/2.png" alt style="opacity:1;transition: opacity 0.3s ease-in-out;">
                                 </a>
                                 <div class="item-content">
                                     <h4>坚果 Pro 2 软胶保护套</h4>
@@ -193,7 +192,7 @@
                         <div class="sameList leftMargin">
                             <div class="product">
                                 <a class="item-img">
-                                    <img src="../../hammer-img/image/2.png" alt style="opacity:1;transition: opacity 0.3s ease-in-out;">
+                                    <img src="../hammer-img/image/2.png" alt style="opacity:1;transition: opacity 0.3s ease-in-out;">
                                 </a>
                                 <div class="item-content">
                                     <h4>坚果 Pro 2 软胶保护套</h4>
@@ -214,10 +213,10 @@
                             <div class="tag">
                                 <span>5</span>
                             </div>
-                            <img src="../../hammer-img/image/cart.png" alt="">
+                            <img src="../hammer-img/image/cart.png" alt="">
                         </a>
                     </li>
-                    <li>
+                    <li @click="getcart">
                         <span class="item-img">
                             <a href="#">加入购物车</a>
                         </span>
@@ -242,19 +241,31 @@
     export default {
         data : function(){
             return {
-                obj:{},
+                obj : {},
                 name : " ",
-                bool:false
+                bool : false
             }
         },
-        methods:{
+        methods : {
             routerBack(){
                 this.$router.go(-1);
+            },
+            getcart(){
+                console.log(22);
+                //将数据存入购物车数据库
+                //从登陆中拿tel
+                var tel=window.sessionStorage.getItem("login")
+                var obj=JSON.parse(sessionStorage.getItem('detail'))
+                obj.tel=tel
+                console.log(obj);
+                $.ajax({
+                    url : "http://localhost:8888/cart",
+                    type : "POST",
+                    data : obj
+                })
             }
         },
-        computed : {
-
-        },
+        computed : {},
         created : function(){
             var url = "http://localhost:8888/detail";
             var self = this;
@@ -262,33 +273,34 @@
             //console.log(name);
             $.post(url, function(res){
                 var temparr = JSON.parse(res)
-                  console.log(temparr,name);
-                var obj1={}
+                console.log(temparr, name);
+                var obj1 = {}
                 for(var i = 0; i < temparr.length; i++){
                     if(temparr[i].name == name){
-                         obj1=temparr[i]
+                        obj1 = temparr[i]
                     }
                 }
                 //逻辑  有点复杂
                 //console.log(obj1);
-                if(!(JSON.stringify(obj1)=="{}")){
+                if(!(JSON.stringify(obj1) == "{}")){
                     self.obj = obj1
                     var str = JSON.stringify(obj1)
                     window.sessionStorage.setItem('detail', str);
                     self.name = self.$store.state.name
                 } else {
                     self.obj = JSON.parse(sessionStorage.getItem('detail'))
-                    self.name =self.obj.name
+                    self.name = self.obj.name
                 }
-               // console.log(self.name);
+                // console.log(self.name);
             })
 
             //通过类型来判断bool值
-            if(JSON.parse(sessionStorage.getItem('arr'))[0].type=="手机"){
-                self.bool =true
-            }else {
-                self.bool =false
+            if(JSON.parse(sessionStorage.getItem('arr'))[0].type == "手机"){
+                self.bool = true
+            } else {
+                self.bool = false
             }
+
 
         },
         mounted : function(){
@@ -313,6 +325,9 @@
                 var num = $(".recommend")[0].offsetTop - 100
                 document.documentElement.scrollTo(0, num)
             })
+
+
+
         }
     }
 
@@ -349,7 +364,7 @@
     transform:translateY(-50%);
 }
 .nav-back:before{
-    background:url(../../hammer-img/image/bacl.png) no-repeat;
+    background:url(../hammer-img/image/bacl.png) no-repeat;
     background-size:cover;
     content:" ";
     height:100%;
@@ -498,7 +513,7 @@
 }
 .newPrice i{
     text-decoration:line-through;
-    color: #ccc;
+    color:#ccc;
     font-size:0.12rem;
 }
 .g_price i{
@@ -563,7 +578,7 @@
     transform:translateY(-50%);
     width:.1rem;
     height:.1rem;
-    background:url(../../hammer-img/image/turnTo.png) no-repeat 50%;
+    background:url(../hammer-img/image/turnTo.png) no-repeat 50%;
     background-size:contain;
 }
 .choose{
@@ -613,7 +628,7 @@
     transform:translateY(-50%);
     width:.1rem;
     height:.1rem;
-    background:url(../../hammer-img/image/turnTo.png) no-repeat 50%;
+    background:url(../hammer-img/image/turnTo.png) no-repeat 50%;
     background-size:contain;
 }
 .goodsTec ul{
@@ -691,7 +706,7 @@
     left:0rem;
     top:0.03rem;
     overflow:hidden;
-    background:url(../../hammer-img/image/server.png) no-repeat;
+    background:url(../hammer-img/image/server.png) no-repeat;
     background-size:cover;
     background-position:0 -.05rem;
     z-index:99;
@@ -705,7 +720,7 @@
     left:0;
     top:0.03rem;
     overflow:hidden;
-    background:url(../../hammer-img/image/server.png) no-repeat;
+    background:url(../hammer-img/image/server.png) no-repeat;
     background-size:cover;
     background-position:-.2rem -.03rem;
     z-index:99;
@@ -719,7 +734,7 @@
     left:0;
     top:0.03rem;
     overflow:hidden;
-    background:url(../../hammer-img/image/server.png) no-repeat;
+    background:url(../hammer-img/image/server.png) no-repeat;
     background-size:cover;
     background-position:-.4rem -.03rem;
     z-index:99;
@@ -733,7 +748,7 @@
     left:0;
     top:0.03rem;
     overflow:hidden;
-    background:url(../../hammer-img/image/server.png) no-repeat;
+    background:url(../hammer-img/image/server.png) no-repeat;
     background-size:cover;
     background-position:-.6rem -.03rem;
     z-index:99;

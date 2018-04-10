@@ -5,7 +5,7 @@
         </div>
         <a href="#/product" @click="gettype">
             <div class="phone" id="img1">
-                <img src="../../../hammer-img/7.png" alt="" style="width:100%">
+                <img src="../../hammer-img/7.png" alt="" style="width:100%">
             </div>
         </a>
         <div id="bod"></div>

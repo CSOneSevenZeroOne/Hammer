@@ -6,7 +6,7 @@ import Vue from "vue";
 
 require("weui");
 //容器的样式
-require("../font/iconfont.css")
+require("./font/iconfont.css")
 //重置样式
 require("./reset.css")
 
@@ -22,6 +22,9 @@ Vue.use(VueRouter)
 import classify from "./component/classify.vue"
 import product from "./component/product.vue"
 import detail from "./component/detail.vue"
+import register from "./component/register.vue"
+import login from "./component/login.vue"
+import person from "./component/person.vue"
 
 const router = new VueRouter({
     routes : [{
@@ -35,8 +38,19 @@ const router = new VueRouter({
         {
             path : '/detail',
             component : detail
+        },
+        {
+            path : '/register',
+            component : register
+        },
+        {
+            path : '/login',
+            component : login
+        },
+        {
+            path : '/person',
+            component : person
         }
-
     ]
     // （缩写）相当于 routes: routes
 })
@@ -59,6 +73,9 @@ const store = new Vuex.Store({
 import xclassify from "./component/classify.vue"
 import xproduct from "./component/product.vue"
 import xdetail from "./component/detail.vue"
+import xregister from "./component/register.vue"
+import xlogin from "./component/login.vue"
+import xperson from "./component/person.vue"
 
 new Vue({
     el : "#demo",
@@ -77,6 +94,9 @@ new Vue({
     components : {
         xclassify,
         xproduct,
-        xdetail
+        xdetail,
+        xregister,
+        xlogin,
+        xperson
     }
 })

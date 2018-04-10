@@ -6,7 +6,7 @@
 
         <a href="#/product" @click="gettype">
             <div class="phone" id="img1">
-                <img src="../../../hammer-img/29.png" alt="" style="width:100%">
+                <img src="../../hammer-img/29.png" alt="" style="width:100%">
             </div>
         </a>
 
@@ -15,7 +15,7 @@
                 <a href="#/detail" @click="getname">
                     <li class="oli">
                         <div class="img2">
-                            <img src="../../../hammer-img/33.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/33.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">原装充电器</p>
                     </li>
@@ -23,7 +23,7 @@
                 <a href="#/detail" @click="getname">
                     <li class="oli">
                         <div class="img2">
-                            <img src="../../../hammer-img/8.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/8.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">原装充电器</p>
                     </li>
@@ -31,7 +31,7 @@
                 <a href="#/detail" @click="getname">
                     <li class="oli">
                         <div class="img2">
-                            <img src="../../../hammer-img/31.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/31.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">原装充电器</p>
                     </li>
@@ -39,7 +39,7 @@
                 <a href="#/detail" @click="getname">
                     <li class="oli">
                         <div class="img2">
-                            <img src="../../../hammer-img/38.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/38.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">原装充电器</p>
                     </li>
@@ -47,7 +47,7 @@
                 <a href="#/detail" @click="getname">
                     <li class="oli">
                         <div class="img2">
-                            <img src="../../../hammer-img/39.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/39.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">原装充电器</p>
                     </li>
@@ -55,7 +55,7 @@
                 <a href="#/detail" @click="getname">
                     <li class="oli">
                         <div class="img2">
-                            <img src="../../../hammer-img/33.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/33.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">原装充电器</p>
                     </li>

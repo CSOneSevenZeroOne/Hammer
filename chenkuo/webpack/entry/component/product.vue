@@ -7,7 +7,7 @@
 
             <div id="main" class="phone">
                 <p>
-                    <a href="#/"><i class="iconfont icon-msnui-left-arrow-round">返回</i></a>
+                    <a @click="routerBack"><i class="iconfont icon-msnui-left-arrow-round">返回</i></a>
                     <span v-text="type">手机</span>
                 </p>
             </div>
@@ -80,6 +80,9 @@
             }
         },
         methods : {
+            routerBack(){
+                this.$router.go(-1);
+            },
             getname(event){
                 //**必须先通过点击target找到最大父级再找目标对象
                 var bflg = false

@@ -6,7 +6,7 @@
 
         <a href="#/product" @click="gettype">
             <div class="phone" id="img1">
-                <img src="../../../hammer-img/10.png" alt="" style="width:100%">
+                <img src="../../hammer-img/10.png" alt="" style="width:100%">
             </div>
         </a>
 
@@ -15,7 +15,7 @@
                 <a href="#/detail" @click="getname">
                     <li>
                         <div class="img2">
-                            <img src="../../../hammer-img/19.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/19.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">蓝牙运动耳机</p>
                     </li>
@@ -23,7 +23,7 @@
                 <a href="#/detail" @click="getname">
                     <li>
                         <div class="img2">
-                            <img src="../../../hammer-img/27.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/27.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">蓝牙运动耳机</p>
                     </li>
@@ -31,7 +31,7 @@
                 <a href="#/detail" @click="getname">
                     <li>
                         <div class="img2">
-                            <img src="../../../hammer-img/19.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/19.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">蓝牙运动耳机</p>
                     </li>
@@ -39,7 +39,7 @@
                 <a href="#/detail" @click="getname">
                     <li>
                         <div class="img2">
-                            <img src="../../../hammer-img/35.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/35.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">蓝牙运动耳机</p>
                     </li>
@@ -47,7 +47,7 @@
                 <a href="#/detail" @click="getname">
                     <li>
                         <div class="img2">
-                            <img src="../../../hammer-img/19.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/19.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">蓝牙运动耳机</p>
                     </li>
@@ -55,7 +55,7 @@
                 <a href="#/detail" @click="getname">
                     <li>
                         <div class="img2">
-                            <img src="../../../hammer-img/27.jpg" alt="" width="69px" height="69px">
+                            <img src="../../hammer-img/27.jpg" alt="" width="69px" height="69px">
                         </div>
                         <p class="name-z">蓝牙运动耳机</p>
                     </li>
